@@ -1,0 +1,33 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://tileset.tres" type="TileSet" id=1]
+[ext_resource path="res://player.tscn" type="PackedScene" id=2]
+
+[node name="Node2D" type="Node2D" index="0"]
+
+[node name="TileMap" type="TileMap" parent="." index="0"]
+
+mode = 0
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 82, 94 )
+cell_quadrant_size = 16
+cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+cell_half_offset = 1
+cell_tile_origin = 1
+cell_y_sort = false
+cell_clip_uv = false
+collision_use_kinematic = false
+collision_friction = 1.0
+collision_bounce = 0.0
+collision_layer = 1
+collision_mask = 1
+occluder_light_mask = 1
+format = 1
+tile_data = PoolIntArray( 0, 0, 0, 1, 2, 0, 2, 2, 0, 3, 2, 0, 4, 0, 0, 65536, 2, 0, 65537, 1, 0, 65538, 1, 0, 65539, 1, 0, 65540, 2, 0, 131072, 2, 0, 131073, 1, 0, 131074, 2, 0, 131075, 1, 0, 131076, 2, 0, 196608, 2, 0, 196609, 2, 0, 196610, 1, 0, 196611, 2, 0, 196612, 2, 0, 262146, 2, 0 )
+_sections_unfolded = [ "Cell" ]
+
+[node name="Area2D" parent="." index="1" instance=ExtResource( 2 )]
+
+position = Vector2( 259.28, 280.332 )
+
+

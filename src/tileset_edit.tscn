@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://art/map/battle/hex_tile_01.png" type="Texture" id=1]
+[ext_resource path="res://art/map/battle/hex_tile_02.png" type="Texture" id=2]
+[ext_resource path="res://art/map/battle/hex_tile_03.png" type="Texture" id=3]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Tile 1" type="Sprite" parent="." index="0"]
+
+texture = ExtResource( 1 )
+centered = false
+_sections_unfolded = [ "Offset", "Transform" ]
+
+[node name="Tile 2" type="Sprite" parent="." index="1"]
+
+position = Vector2( 128, 0 )
+texture = ExtResource( 2 )
+centered = false
+_sections_unfolded = [ "Offset", "Transform" ]
+
+[node name="Sprite" type="Sprite" parent="." index="2"]
+
+position = Vector2( 256, 0 )
+texture = ExtResource( 3 )
+centered = false
+_sections_unfolded = [ "Offset", "Transform" ]
+
+
