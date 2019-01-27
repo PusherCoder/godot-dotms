@@ -3,7 +3,7 @@
 [ext_resource path="res://tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://player.tscn" type="PackedScene" id=2]
 
-[node name="Node2D" type="Node2D" index="0"]
+[node name="Node2D" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="." index="0"]
 
@@ -28,6 +28,6 @@ _sections_unfolded = [ "Cell" ]
 
 [node name="Area2D" parent="." index="1" instance=ExtResource( 2 )]
 
-position = Vector2( 259.28, 280.332 )
+position = Vector2( 267.28, 291.332 )
 
 
