@@ -28,7 +28,7 @@ animations = [ {
 [sub_resource type="CircleShape2D" id=2]
 
 custom_solver_bias = 0.0
-radius = 10.0
+radius = 42.8071
 
 [sub_resource type="SpriteFrames" id=3]
 
@@ -86,7 +86,7 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[node name="Player" type="Area2D"]
+[node name="Player" type="Area2D" index="0"]
 
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
@@ -100,7 +100,7 @@ speed = null
 
 [node name="PlayerSprite" type="AnimatedSprite" parent="." index="0"]
 
-position = Vector2( 0, -1.19209e-007 )
+position = Vector2( 0, -6.99999 )
 scale = Vector2( 0.7, 0.7 )
 frames = SubResource( 1 )
 animation = "attack"
@@ -114,36 +114,37 @@ shape = SubResource( 2 )
 
 frames = SubResource( 3 )
 animation = "default"
-offset = Vector2( 0, -96 )
+offset = Vector2( 0, -94 )
 
 [node name="DSprite" type="AnimatedSprite" parent="." index="3"]
 
 frames = SubResource( 4 )
 animation = "default"
-offset = Vector2( 83, 48 )
+offset = Vector2( 82, 47 )
 
 [node name="QSprite" type="AnimatedSprite" parent="." index="4"]
 
 frames = SubResource( 5 )
 animation = "default"
-offset = Vector2( -83, -48 )
+offset = Vector2( -82, -47 )
 
 [node name="SSprite" type="AnimatedSprite" parent="." index="5"]
 
 frames = SubResource( 6 )
 animation = "default"
-offset = Vector2( 0, 96 )
+offset = Vector2( 0, 94 )
 
 [node name="ASprite" type="AnimatedSprite" parent="." index="6"]
 
 frames = SubResource( 7 )
 animation = "default"
-offset = Vector2( -83, 48 )
+offset = Vector2( -82, 47 )
+_sections_unfolded = [ "Visibility" ]
 
 [node name="ESprite" type="AnimatedSprite" parent="." index="7"]
 
 frames = SubResource( 8 )
 animation = "default"
-offset = Vector2( 83, -48 )
+offset = Vector2( 82, -47 )
 
 
