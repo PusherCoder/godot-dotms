@@ -1,8 +1,20 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://Area2D.gd" type="Script" id=1]
 [ext_resource path="res://art/pc/testPCNeutral.png" type="Texture" id=2]
 [ext_resource path="res://art/pc/testPCAction.png" type="Texture" id=3]
+[ext_resource path="res://art/map/battle/movement_w.png" type="Texture" id=4]
+[ext_resource path="res://art/map/battle/attack_w.png" type="Texture" id=5]
+[ext_resource path="res://art/map/battle/movement_d.png" type="Texture" id=6]
+[ext_resource path="res://art/map/battle/attack_d.png" type="Texture" id=7]
+[ext_resource path="res://art/map/battle/movement_q.png" type="Texture" id=8]
+[ext_resource path="res://art/map/battle/attack_q.png" type="Texture" id=9]
+[ext_resource path="res://art/map/battle/movement_s.png" type="Texture" id=10]
+[ext_resource path="res://art/map/battle/attack_s.png" type="Texture" id=11]
+[ext_resource path="res://art/map/battle/movement_a.png" type="Texture" id=12]
+[ext_resource path="res://art/map/battle/attack_a.png" type="Texture" id=13]
+[ext_resource path="res://art/map/battle/movement_e.png" type="Texture" id=14]
+[ext_resource path="res://art/map/battle/attack_e.png" type="Texture" id=15]
 
 [sub_resource type="SpriteFrames" id=1]
 
@@ -18,7 +30,63 @@ animations = [ {
 custom_solver_bias = 0.0
 radius = 10.0
 
-[node name="Area2D" type="Area2D" index="0"]
+[sub_resource type="SpriteFrames" id=3]
+
+animations = [ {
+"frames": [ ExtResource( 4 ), ExtResource( 5 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+_sections_unfolded = [ "Resource" ]
+
+[sub_resource type="SpriteFrames" id=4]
+
+animations = [ {
+"frames": [ ExtResource( 6 ), ExtResource( 7 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=5]
+
+animations = [ {
+"frames": [ ExtResource( 8 ), ExtResource( 9 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+_sections_unfolded = [ "Resource" ]
+
+[sub_resource type="SpriteFrames" id=6]
+
+animations = [ {
+"frames": [ ExtResource( 10 ), ExtResource( 11 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=7]
+
+animations = [ {
+"frames": [ ExtResource( 12 ), ExtResource( 13 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=8]
+
+animations = [ {
+"frames": [ ExtResource( 14 ), ExtResource( 15 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[node name="Player" type="Area2D"]
 
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
@@ -30,8 +98,9 @@ audio_bus_name = "Master"
 script = ExtResource( 1 )
 speed = null
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="." index="0"]
+[node name="PlayerSprite" type="AnimatedSprite" parent="." index="0"]
 
+position = Vector2( 0, -1.19209e-007 )
 scale = Vector2( 0.7, 0.7 )
 frames = SubResource( 1 )
 animation = "attack"
@@ -40,5 +109,41 @@ _sections_unfolded = [ "Transform" ]
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
 
 shape = SubResource( 2 )
+
+[node name="WSprite" type="AnimatedSprite" parent="." index="2"]
+
+frames = SubResource( 3 )
+animation = "default"
+offset = Vector2( 0, -96 )
+
+[node name="DSprite" type="AnimatedSprite" parent="." index="3"]
+
+frames = SubResource( 4 )
+animation = "default"
+offset = Vector2( 83, 48 )
+
+[node name="QSprite" type="AnimatedSprite" parent="." index="4"]
+
+frames = SubResource( 5 )
+animation = "default"
+offset = Vector2( -83, -48 )
+
+[node name="SSprite" type="AnimatedSprite" parent="." index="5"]
+
+frames = SubResource( 6 )
+animation = "default"
+offset = Vector2( 0, 96 )
+
+[node name="ASprite" type="AnimatedSprite" parent="." index="6"]
+
+frames = SubResource( 7 )
+animation = "default"
+offset = Vector2( -83, 48 )
+
+[node name="ESprite" type="AnimatedSprite" parent="." index="7"]
+
+frames = SubResource( 8 )
+animation = "default"
+offset = Vector2( 83, -48 )
 
 
