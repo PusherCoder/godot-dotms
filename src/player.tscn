@@ -106,7 +106,7 @@ frames = SubResource( 1 )
 animation = "attack"
 _sections_unfolded = [ "Transform" ]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
+[node name="PlayerCollision" type="CollisionShape2D" parent="." index="1"]
 
 shape = SubResource( 2 )
 
@@ -116,35 +116,71 @@ frames = SubResource( 3 )
 animation = "default"
 offset = Vector2( 0, -94 )
 
-[node name="DSprite" type="AnimatedSprite" parent="." index="3"]
+[node name="WCollision" type="CollisionShape2D" parent="." index="3"]
+
+position = Vector2( 0, -94 )
+shape = SubResource( 2 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="DSprite" type="AnimatedSprite" parent="." index="4"]
 
 frames = SubResource( 4 )
 animation = "default"
 offset = Vector2( 82, 47 )
 
-[node name="QSprite" type="AnimatedSprite" parent="." index="4"]
+[node name="DCollision" type="CollisionShape2D" parent="." index="5"]
+
+position = Vector2( 82, 47 )
+shape = SubResource( 2 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="QSprite" type="AnimatedSprite" parent="." index="6"]
 
 frames = SubResource( 5 )
 animation = "default"
 offset = Vector2( -82, -47 )
 
-[node name="SSprite" type="AnimatedSprite" parent="." index="5"]
+[node name="QCollision" type="CollisionShape2D" parent="." index="7"]
+
+position = Vector2( -82, -47 )
+shape = SubResource( 2 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="SSprite" type="AnimatedSprite" parent="." index="8"]
 
 frames = SubResource( 6 )
 animation = "default"
 offset = Vector2( 0, 94 )
 
-[node name="ASprite" type="AnimatedSprite" parent="." index="6"]
+[node name="SCollision" type="CollisionShape2D" parent="." index="9"]
+
+position = Vector2( 0, 94 )
+shape = SubResource( 2 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="ASprite" type="AnimatedSprite" parent="." index="10"]
 
 frames = SubResource( 7 )
 animation = "default"
 offset = Vector2( -82, 47 )
 _sections_unfolded = [ "Visibility" ]
 
-[node name="ESprite" type="AnimatedSprite" parent="." index="7"]
+[node name="ACollision" type="CollisionShape2D" parent="." index="11"]
+
+position = Vector2( -82, 47 )
+shape = SubResource( 2 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="ESprite" type="AnimatedSprite" parent="." index="12"]
 
 frames = SubResource( 8 )
 animation = "default"
 offset = Vector2( 82, -47 )
+
+[node name="ECollision" type="CollisionShape2D" parent="." index="13"]
+
+position = Vector2( 82, -47 )
+shape = SubResource( 2 )
+_sections_unfolded = [ "Transform" ]
 
 
