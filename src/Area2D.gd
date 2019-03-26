@@ -30,7 +30,6 @@ func keyboard_input(event):
 		move(2)
 	if event.is_action_pressed("ui_page_up"):
 		move(4)
-	
 
 func mouse_input(event):
 	#some variables that define how the hex grid is mapped to the screen position
@@ -123,3 +122,6 @@ func start(pos):
 	position = pos
 	show()
 	$CollisionShape2D.disabled = false
+
+func _on_Monster_in_combat():
+	$WSprite.frame = 1
