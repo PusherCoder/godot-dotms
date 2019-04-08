@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://art/map/battle/floor_iso.png" type="Texture" id=1]
+[ext_resource path="res://art/map/battle/wall_iso.png" type="Texture" id=2]
+[ext_resource path="res://art/map/battle/sidewall_iso.png" type="Texture" id=3]
+
+[node name="battle_map_tileset" type="Node2D"]
+
+[node name="floor" type="Sprite" parent="." index="0"]
+
+texture = ExtResource( 1 )
+offset = Vector2( 130, 90 )
+_sections_unfolded = [ "Offset" ]
+
+[node name="wall" type="Sprite" parent="." index="1"]
+
+texture = ExtResource( 2 )
+offset = Vector2( 130, 270 )
+_sections_unfolded = [ "Offset" ]
+
+[node name="wallside" type="Sprite" parent="." index="2"]
+
+texture = ExtResource( 3 )
+offset = Vector2( 350, 90 )
+_sections_unfolded = [ "Offset" ]
+
+
