@@ -1,27 +1,65 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://art/map/battle/floor_iso.png" type="Texture" id=1]
 [ext_resource path="res://art/map/battle/wall_iso.png" type="Texture" id=2]
 [ext_resource path="res://art/map/battle/sidewall_iso.png" type="Texture" id=3]
 
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 46.2525, 49.2425 )
+
 [node name="battle_map_tileset" type="Node2D"]
 
 [node name="floor" type="Sprite" parent="." index="0"]
 
+position = Vector2( 97.47, 57.76 )
 texture = ExtResource( 1 )
-offset = Vector2( 130, 90 )
 _sections_unfolded = [ "Offset" ]
 
 [node name="wall" type="Sprite" parent="." index="1"]
 
+position = Vector2( 111.91, 208.478 )
 texture = ExtResource( 2 )
-offset = Vector2( 130, 270 )
 _sections_unfolded = [ "Offset" ]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="wall" index="0"]
+
+position = Vector2( 0.418053, 2.02922 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="wall/StaticBody2D" index="0"]
+
+position = Vector2( -0.317505, -2.16959 )
+shape = SubResource( 1 )
 
 [node name="wallside" type="Sprite" parent="." index="2"]
 
+position = Vector2( 279.925, 149.229 )
 texture = ExtResource( 3 )
-offset = Vector2( 350, 90 )
 _sections_unfolded = [ "Offset" ]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="wallside" index="0"]
+
+position = Vector2( 0.31546, 1.64073 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="wallside/StaticBody2D" index="0"]
+
+position = Vector2( -356.766, -90.955 )
+build_mode = 0
+polygon = PoolVector2Array( 308.491, -8.27277, 403.788, 92.726, 402.159, 187.209, 306.862, 84.5809 )
 
 
