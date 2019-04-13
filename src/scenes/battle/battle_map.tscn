@@ -4,7 +4,7 @@
 [ext_resource path="res://scenes/battle/battle_monster_test.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/battle/battle_character_test.tscn" type="PackedScene" id=3]
 
-[node name="battle_map" type="Node2D" index="0"]
+[node name="battle_map" type="Node2D"]
 
 [node name="floor" type="TileMap" parent="." index="0"]
 
@@ -29,11 +29,11 @@ _sections_unfolded = [ "Cell", "Collision" ]
 
 [node name="battle_actor2" parent="floor" index="0" instance=ExtResource( 2 )]
 
-position = Vector2( 401, 238 )
+position = Vector2( 405, 350 )
 
 [node name="battle_actor" parent="floor" index="1" instance=ExtResource( 3 )]
 
-position = Vector2( 577, 435 )
+position = Vector2( 585, 450 )
 
 [node name="foreground" type="TileMap" parent="." index="1"]
 
