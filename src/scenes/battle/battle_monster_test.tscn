@@ -13,10 +13,10 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="CircleShape2D" id=2]
 
 custom_solver_bias = 0.0
-extents = Vector2( 32.472, 24.8222 )
+radius = 28.562
 
 [node name="battle_actor" instance=ExtResource( 1 )]
 
@@ -27,8 +27,6 @@ animation = "default"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
 
-position = Vector2( 0, 20 )
 shape = SubResource( 2 )
-_sections_unfolded = [ "Transform" ]
 
 

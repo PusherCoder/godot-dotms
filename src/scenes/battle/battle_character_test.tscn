@@ -14,10 +14,10 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="CircleShape2D" id=2]
 
 custom_solver_bias = 0.0
-extents = Vector2( 33.4426, 27.793 )
+radius = 22.8617
 
 [node name="battle_actor" index="0" instance=ExtResource( 1 )]
 
@@ -28,42 +28,43 @@ script = ExtResource( 2 )
 frames = SubResource( 1 )
 animation = "default"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
+[node name="check_up" type="RayCast2D" parent="." index="1"]
 
-position = Vector2( 0, 20 )
+enabled = true
+exclude_parent = true
+cast_to = Vector2( 0, -50 )
+collision_mask = 1
+_sections_unfolded = [ "Transform" ]
+
+[node name="check_left" type="RayCast2D" parent="." index="2"]
+
+enabled = true
+exclude_parent = true
+cast_to = Vector2( -45, 0 )
+collision_mask = 1
+_sections_unfolded = [ "Transform" ]
+
+[node name="check_right" type="RayCast2D" parent="." index="3"]
+
+enabled = true
+exclude_parent = true
+cast_to = Vector2( 45, 0 )
+collision_mask = 1
+_sections_unfolded = [ "Transform" ]
+
+[node name="check_down" type="RayCast2D" parent="." index="4"]
+
+enabled = true
+exclude_parent = true
+cast_to = Vector2( 0, 50 )
+collision_mask = 1
+_sections_unfolded = [ "Transform" ]
+
+[node name="ghost_zone" type="Node2D" parent="." index="5"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="6"]
+
 shape = SubResource( 2 )
-_sections_unfolded = [ "Material", "Transform", "Visibility", "Z Index" ]
-
-[node name="check_up" type="RayCast2D" parent="." index="2"]
-
-enabled = true
-exclude_parent = true
-cast_to = Vector2( -90, -100 )
-collision_mask = 1
-_sections_unfolded = [ "Transform" ]
-
-[node name="check_left" type="RayCast2D" parent="." index="3"]
-
-enabled = true
-exclude_parent = true
-cast_to = Vector2( -90, 0 )
-collision_mask = 1
-_sections_unfolded = [ "Transform" ]
-
-[node name="check_right" type="RayCast2D" parent="." index="4"]
-
-enabled = true
-exclude_parent = true
-cast_to = Vector2( 90, 0 )
-collision_mask = 1
-_sections_unfolded = [ "Transform" ]
-
-[node name="check_down" type="RayCast2D" parent="." index="5"]
-
-enabled = true
-exclude_parent = true
-cast_to = Vector2( 90, 100 )
-collision_mask = 1
-_sections_unfolded = [ "Transform" ]
+_sections_unfolded = [ "Transform", "Z Index" ]
 
 
