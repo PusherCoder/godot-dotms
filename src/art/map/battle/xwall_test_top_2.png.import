@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/orcNeutral.png-9aa91a9bd80c9e0a1a45bd92d6b748e9.stex"
+path="res://.import/xwall_test_top_2.png-f1e0c6ea65a7f1c0d1e1de02c1d4b646.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/npc/orcNeutral.png"
-dest_files=[ "res://.import/orcNeutral.png-9aa91a9bd80c9e0a1a45bd92d6b748e9.stex" ]
+source_file="res://art/map/battle/xwall_test_top_2.png"
+dest_files=[ "res://.import/xwall_test_top_2.png-f1e0c6ea65a7f1c0d1e1de02c1d4b646.stex" ]
 
 [params]
 

@@ -25,6 +25,7 @@ func _ready():
 	pass
 
 func _input(event):
+	var somevector = Vector2(0,0)
 	if movement_ready == true:
 		if event.is_action_pressed("key_up") and movement_array.has( Vector2( 0, -Y_DISP ) ):
 			position.y -= Y_DISP
@@ -42,10 +43,13 @@ func _input(event):
 			position.x -= X_DISP
 			$AnimatedSprite.set_flip_h( true )
 			reset_movement()
+	if event.is_action_pressed("mouse_click"):
+		somevector = $nav.get_closest_point( event.position )
+		print( somevector )
 
 func _process(delta):
 	if movement_array_position < movement_array.size():
-		print( "Processing " + var2str(movement_array[movement_array_position]) )
+		#print( "Processing " + var2str(movement_array[movement_array_position]) )
 		var ghost = movement_ghost.instance()
 		ghost.set_position( $check_up.position )
 		$ghost_zone.add_child(ghost)
