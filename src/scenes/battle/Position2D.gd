@@ -10,6 +10,7 @@ var target_point_world = Vector2()
 var target_position = Vector2()
 
 var velocity = Vector2()
+var delay = 14
 
 func _ready():
 	_change_state(STATES.IDLE)
@@ -30,6 +31,10 @@ func _change_state(new_state):
 func _process(_delta):
 	if not _state == STATES.FOLLOW:
 		return
+	delay -= 1
+	if delay > 0:
+		return
+	delay = 14
 	var arrived_to_next_point = move_to(target_point_world)
 	if arrived_to_next_point:
 		path.remove(0)
@@ -40,16 +45,10 @@ func _process(_delta):
 
 
 func move_to(world_position):
-	var MASS = 10.0
-	var ARRIVE_DISTANCE = 10.0
-
-	var desired_velocity = (world_position - position).normalized() * SPEED
-	var steering = desired_velocity - velocity
-	velocity += steering / MASS
-	position += velocity * get_process_delta_time()
-	$Sprite.set_flip_h( velocity.x < 0 )
+	$Sprite.set_flip_h( position.x > world_position.x )
+	position = world_position
 	#rotation = velocity.angle()
-	return position.distance_to(world_position) < ARRIVE_DISTANCE
+	return true
 
 
 func _input(event):
