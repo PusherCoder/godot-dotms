@@ -12,7 +12,7 @@ var path_end_position = Vector2() setget _set_path_end_position
 
 var _point_path = []
 
-const BASE_LINE_WIDTH = 3.0
+const BASE_LINE_WIDTH = 1.0
 const DRAW_COLOR = Color('#fff')
 
 # get_used_cells_by_id is a method from the TileMap node
@@ -138,8 +138,8 @@ func clear_previous_path_drawing():
 		return
 	var point_start = _point_path[0]
 	var point_end = _point_path[len(_point_path) - 1]
-	set_cell(point_start.x, point_start.y, -1)
-	set_cell(point_end.x, point_end.y, -1)
+	#set_cell(point_start.x, point_start.y, -1)
+	#set_cell(point_end.x, point_end.y, -1)
 
 
 func _draw():
@@ -148,8 +148,8 @@ func _draw():
 	var point_start = _point_path[0]
 	var point_end = _point_path[len(_point_path) - 1]
 
-	set_cell(point_start.x, point_start.y, 1)
-	set_cell(point_end.x, point_end.y, 2)
+	#set_cell(point_start.x, point_start.y, 1)
+	#set_cell(point_end.x, point_end.y, 2)
 
 	var last_point = map_to_world(Vector2(point_start.x, point_start.y)) + _half_cell_size
 	for index in range(1, len(_point_path)):
@@ -166,8 +166,8 @@ func _set_path_start_position(value):
 	if is_outside_map_bounds(value):
 		return
 
-	set_cell(path_start_position.x, path_start_position.y, -1)
-	set_cell(value.x, value.y, 1)
+	#set_cell(path_start_position.x, path_start_position.y, -1)
+	#set_cell(value.x, value.y, 1)
 	path_start_position = value
 	if path_end_position and path_end_position != path_start_position:
 		_recalculate_path()
@@ -179,8 +179,8 @@ func _set_path_end_position(value):
 	if is_outside_map_bounds(value):
 		return
 
-	set_cell(path_start_position.x, path_start_position.y, -1)
-	set_cell(value.x, value.y, 2)
+	#set_cell(path_start_position.x, path_start_position.y, -1)
+	#set_cell(value.x, value.y, 2)
 	path_end_position = value
 	if path_start_position != value:
 		_recalculate_path()
